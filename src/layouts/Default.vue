@@ -147,7 +147,7 @@ export default {
       this.submitted = true;
     }
   },
-  created() {
+  mounted() {
     window.addEventListener("scroll", this.handleScroll);
   },
   destroyed() {
