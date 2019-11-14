@@ -57,7 +57,7 @@
             id="about"
             class="container mx-auto flex flex-col items-center my-32 pt-8 px-2 text-center"
         >
-            <g-image alt="Headshot" src="~/assets/headshot.png"></g-image>
+            <g-image class="w-1/3" alt="Headshot" src="~/assets/headshot.png"></g-image>
             <div
                 class="text-text-green text-5xl uppercase tracking-widest font-extrabold font-body mt-4"
             >Joe Wilson</div>
