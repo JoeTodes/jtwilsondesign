@@ -1,6 +1,6 @@
 <template>
-    <div id="home" class="flex flex-col min-h-screen leading-normal bg-white">
-        <header class="fixed top-0 left-0 w-screen z-20">
+    <div class="flex flex-col min-h-screen leading-normal bg-white">
+        <header id="home" class="fixed top-0 left-0 w-screen z-20">
             <div class="h-2 frosty2 mx-0 z-20"></div>
 
             <transition name="nav-scroll">
