@@ -6,31 +6,35 @@
             <transition name="nav-scroll">
                 <nav
                     v-if="!scrollingDown"
-                    class="mx-auto flex justify-between items-center py-4 px-10 bg-white z-10"
+                    class="mx-auto flex justify-between items-center py-2 sm:py-4 px-4 sm:px-10 bg-white z-10"
                 >
-                    <g-link
-                        class="font-body font-extrabold text-text-green text-3xl hover:text-ice-600 tracking-wider"
-                        to="/"
-                    >
-                        JTWILSON.DESIGN
-                        <span style="color: #39C9DA" class="-ml-2 text-4xl">( )</span>
+                    <g-link class="flex items-center" to="/">
+                        <span
+                            class="align-middle font-body font-extrabold text-text-green text-xl lg:text-3xl hover:text-ice-600 tracking-wider"
+                        >JTWILSON.DESIGN</span>
+                        <span
+                            style="color: #39C9DA"
+                            class="align-middle font-display font-extrabold text-3xl lg:text-4xl -mt-1"
+                        >( )</span>
                     </g-link>
 
-                    <ul class="flex tracking-widest font-display font-bold text-2xl text-text-blue">
+                    <ul
+                        class="hidden md:flex tracking-widest font-display font-bold text-xl lg:text-2xl text-text-blue"
+                    >
                         <div class>
                             <li
-                                class="mx-4 md:mr-4 lg:mr-8 border-2 border-transparent rounded-full px-4 py-3 hover:text-text-green hover:border-text-green"
+                                class="mr-4 lg:mr-8 border-2 border-transparent rounded-full px-3 py-2 lg:px-4 lg:py-3 hover:text-text-green hover:border-text-green"
                             >
                                 <a href="#" v-scroll-to="'#home'">HOME</a>
                             </li>
                         </div>
                         <li
-                            class="mr-4 md:mr-4 lg:mr-8 border-2 border-transparent rounded-full px-4 py-3 hover:text-text-green hover:border-text-green"
+                            class="mr-2 lg:mr-8 border-2 border-transparent rounded-full px-3 py-2 lg:px-4 lg:py-3 hover:text-text-green hover:border-text-green"
                         >
                             <a href="#" v-scroll-to="'#about'">ABOUT</a>
                         </li>
                         <li
-                            class="border-2 border-transparent rounded-full px-4 py-3 hover:text-text-green hover:border-text-green"
+                            class="border-2 border-transparent rounded-full px-3 py-2 lg:px-4 lg:py-3 hover:text-text-green hover:border-text-green"
                         >
                             <a href="#" v-scroll-to="'#contact'">CONTACT</a>
                         </li>
@@ -42,9 +46,9 @@
             <slot />
         </div>
 
-        <footer id="contact" class="frosty h-screen z-10">
-            <div class="flex flex-col justify-around items-center">
-                <div class="text-4xl text-white font-extrabold pb-8 pt-16">Get in Touch!</div>
+        <footer id="contact" class="frostyfoot h-screen z-10">
+            <div class="flex flex-col h-screen justify-between items-center">
+                <div class="text-4xl text-white font-extrabold pb-8 pt-8">Get in Touch!</div>
                 <form
                     name="contact"
                     method="post"
@@ -85,7 +89,7 @@
                     <div class="message-wrapper">
                         <textarea
                             :style="[submitted?{'pointer-events':'none'}:{'pointer-events':'all'}]"
-                            class="my-2 w-full mx-auto text-xl font-semibold font-body rounded-full py-2 px-4"
+                            class="my-2 w-full mx-auto text-xl font-bold font-body rounded-full py-2 px-4"
                             name="message"
                             placeholder="What can we build together?"
                             v-model="formData.message"
@@ -99,12 +103,15 @@
                         type="submit"
                     >{{submitted?"Thanks!":"Submit"}}</button>
                 </form>
-                <div
-                    class="mt-16 uppercase text-lg font-body text-white"
-                >Copyright {{new Date().getFullYear()}}</div>
-                <div class="uppercase text-md font-body text-white">Joe Wilson</div>
+                <div class="text-center">
+                    <div
+                        class="uppercase text-lg font-body text-white"
+                    >Copyright {{new Date().getFullYear()}}</div>
+                    <div class="uppercase text-md font-body text-white">Joe Wilson</div>
+                </div>
             </div>
         </footer>
+
         <div class="fixed bottom-0 left-0 w-screen h-4 frosty3 mx-0"></div>
     </div>
 </template>
@@ -166,7 +173,23 @@ export default {
 
 <style scoped>
 .frosty {
-    background: linear-gradient(130deg, #3ae1b4 0%, #29c8db 50%, #2c7aff 100%);
+    background-image: linear-gradient(
+        130deg,
+        #3ae1b4 0%,
+        #29c8db 50%,
+        #2c7aff 100%
+    );
+}
+.frostyfoot {
+    background-image: linear-gradient(
+        130deg,
+        #3ae1b4 0%,
+        #29c8db 50%,
+        #2c7aff 100%
+    );
+}
+.frosty:hover {
+    background-image: none;
 }
 .frosty2 {
     background: linear-gradient(90deg, #3ae1b4 0%, #29c8db 50%, #2c7aff 100%);
@@ -193,6 +216,10 @@ nav {
 .nav-scroll-enter-active,
 .nav-scroll-leave-active {
     transition: all 0.2s ease;
+}
+
+@media screen and (max-width: );
+ {
 }
 </style>
 
