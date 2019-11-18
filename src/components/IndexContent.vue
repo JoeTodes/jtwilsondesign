@@ -1,7 +1,7 @@
 <template>
     <div
         :class="{'md:flex-row': isLeft, 'md:flex-row-reverse': !isLeft}"
-        class="container mx-auto flex flex-col justify-between items-center pt-32 pb-16 px-12 xl:px-64"
+        class="container mx-auto flex flex-col justify-between items-center pt-32 pb-16 px-2 md:px-12 xl:px-64"
     >
         <div
             v-bind:class="{'md:text-left': isLeft, 'md:text-right': !isLeft}"
@@ -15,7 +15,8 @@
             </div>
 
             <button
-                class="mb-4 font-display text-xl text-white font-bold frosty tracking-wider border-2 border-white rounded-full px-4 py-3 hover:text-text-green hover:border-text-green hover:bg-whitegrad"
+                v-on:click="$emit('open-portfolio', title )"
+                class="mb-4 font-display text-xl text-white font-bold frosty tracking-wider border-2 border-white rounded-full px-4 py-3 hover:text-text-green hover:border-text-green"
             >EXAMPLES</button>
         </div>
         <slot name="image"></slot>
@@ -24,7 +25,7 @@
 
 <script>
 export default {
-    props: ["isLeft"]
+    props: ["title", "isLeft"]
 };
 </script>
 

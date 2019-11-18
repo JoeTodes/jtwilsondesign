@@ -7,7 +7,7 @@
                 v-if="!scrollingDown"
                 class="mx-auto flex justify-between items-center py-2 sm:py-4 px-4 sm:px-10 bg-white z-10"
             >
-                <g-link class="flex items-center" to="/">
+                <a class="flex items-center" href="#" v-scroll-to="'#home'">
                     <span
                         class="align-middle font-body font-extrabold text-text-green text-xl lg:text-3xl hover:text-ice-600 tracking-wider"
                     >JTWILSON.DESIGN</span>
@@ -15,7 +15,7 @@
                         style="color: #39C9DA"
                         class="align-middle font-display font-extrabold text-3xl lg:text-4xl -mt-1"
                     >( )</span>
-                </g-link>
+                </a>
 
                 <ul
                     class="hidden md:flex tracking-widest font-display font-bold text-xl lg:text-2xl text-text-blue"
