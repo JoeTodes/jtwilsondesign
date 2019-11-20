@@ -12,9 +12,9 @@
       </div>
       <div class="flex flex-wrap mx-4 self-center justify-center mt-16">
         <Card
-          v-for="item in $static.allPost.edges"
+          v-for="item in filterPosts"
           :key="item.node.title"
-          url="#"
+          :url="item.node.url"
           :title="item.node.title"
           :image="item.node.image"
           :text="item.node.content"
@@ -32,6 +32,8 @@ query{
                 title
                 image
                 content
+                panel
+                url
             }
         }
     }
@@ -54,6 +56,13 @@ export default {
   methods: {
     handleScroll(event) {
       this.YOffset = window.pageYOffset;
+    }
+  },
+  computed: {
+    filterPosts: function() {
+      return this.$static.allPost.edges.filter(edge => {
+        return edge.node.panel == this.title;
+      });
     }
   },
   mounted() {
