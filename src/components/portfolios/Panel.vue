@@ -11,28 +11,32 @@
         </button>
       </div>
       <div class="flex flex-wrap mx-4 self-center justify-center mt-16">
-        <Card url="#" image="~/assets/roadcase.png" text="nice project I did">
-          <g-image src="~/assets/roadcase.png"></g-image>
-        </Card>
-        <Card url="#" image="~/assets/roadcase.png" text="nice project I did">
-          <g-image src="~/assets/roadcase.png"></g-image>
-        </Card>
-        <Card url="#" image="~/assets/roadcase.png" text="nice project I did">
-          <g-image src="~/assets/roadcase.png"></g-image>
-        </Card>
-        <Card url="#" image="~/assets/roadcase.png" text="nice project I did">
-          <g-image src="~/assets/roadcase.png"></g-image>
-        </Card>
-        <Card url="#" image="~/assets/roadcase.png" text="nice project I did">
-          <g-image src="~/assets/roadcase.png"></g-image>
-        </Card>
-        <Card url="#" image="~/assets/roadcase.png" text="nice project I did">
-          <g-image src="~/assets/roadcase.png"></g-image>
-        </Card>
+        <Card
+          v-for="item in $static.allPost.edges"
+          :key="item.node.title"
+          url="#"
+          :title="item.node.title"
+          :image="item.node.image"
+          :text="item.node.content"
+        ></Card>
       </div>
     </div>
   </transition>
 </template>
+
+<static-query>
+query{
+    allPost{
+        edges{
+            node{
+                title
+                image
+                content
+            }
+        }
+    }
+}
+</static-query>
 
 <script>
 import Card from "~/components/portfolios/Card.vue";
