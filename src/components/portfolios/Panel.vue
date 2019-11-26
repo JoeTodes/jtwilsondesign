@@ -9,7 +9,7 @@
                     class="text-white font-dispaly font-extrabold text-6xl align-middle"
                 >{{this.title}}</div>
                 <button class="self-end my-auto" v-on:click="$emit('close-portfolio',title)">
-                    <font-awesome class="text-white text-6xl" :icon="['far','times-circle']" />
+                    <font-awesome class="text-white text-6xl" :icon="['far','times-circle']"></font-awesome>
                 </button>
             </div>
             <div class="flex mx-1 sm:mx-4 self-center justify-center mt-2">
