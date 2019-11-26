@@ -4,10 +4,18 @@ require('~/main.css')
 
 import DefaultLayout from '~/layouts/Default.vue'
 import VueScrollTo from 'vue-scrollto'
+import VScrollLock from 'v-scroll-lock'
 
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { config, library } from '@fortawesome/fontawesome-svg-core'
-import { faTimesCircle } from '@fortawesome/free-regular-svg-icons'
+import {
+  FontAwesomeIcon
+} from '@fortawesome/vue-fontawesome'
+import {
+  config,
+  library
+} from '@fortawesome/fontawesome-svg-core'
+import {
+  faTimesCircle
+} from '@fortawesome/free-regular-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 config.autoAddCss = false;
@@ -25,5 +33,6 @@ export default function (Vue, {
       href: 'https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800|Nunito:300,400,600,700,800'
     })
   Vue.use(VueScrollTo)
+  Vue.use(VScrollLock)
   Vue.component('font-awesome', FontAwesomeIcon)
 }

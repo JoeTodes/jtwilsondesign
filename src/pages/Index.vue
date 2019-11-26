@@ -1,8 +1,23 @@
 <template>
     <div>
-        <Panel title="web" v-on:close-portfolio="closePortfolio" v-show="openWeb" />
-        <Panel title="cad" v-on:close-portfolio="closePortfolio" v-show="openCad" />
-        <Panel title="gaming" v-on:close-portfolio="closePortfolio" v-show="openGaming" />
+        <Panel
+            title="web"
+            v-on:close-portfolio="closePortfolio"
+            v-show="openWeb"
+            v-scroll-lock="openWeb"
+        />
+        <Panel
+            title="cad"
+            v-on:close-portfolio="closePortfolio"
+            v-show="openCad"
+            v-scroll-lock="openCad"
+        />
+        <Panel
+            title="gaming"
+            v-on:close-portfolio="closePortfolio"
+            v-show="openGaming"
+            v-scroll-lock="openGaming"
+        />
 
         <Layout class="sm:pt-8 md:pt-16">
             <Content v-on:open-portfolio="openPortfolio" title="web" :isLeft="true">
@@ -67,7 +82,8 @@ export default {
         return {
             openWeb: false,
             openCad: false,
-            openGaming: false
+            openGaming: false,
+            YOffset: 0
         };
     },
     components: {
