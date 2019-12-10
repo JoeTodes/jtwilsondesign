@@ -24,7 +24,7 @@
                 <template v-slot:title>Modern &amp; Responsive Web Design &amp; Development</template>
                 <template
                     v-slot:body
-                >Specializing in beautiful front-end experiences, novel productivity tools for gamers and hobbyists, and Shopify e-commerce platforms</template>
+                >Specializing in novel productivity tools for gamers and hobbyists and easy to manage and maintain blogs with custom features</template>
                 <template v-slot:image>
                     <g-image
                         alt="Web Development"
@@ -37,10 +37,10 @@
             <Content v-on:open-portfolio="openPortfolio" title="cad" :isLeft="false">
                 <template
                     v-slot:title
-                >Flexible &amp; Purposeful CAD and Fabrication of Storage &amp; Transport Solutions</template>
+                >E-Commerce Web Solutions with Shopify</template>
                 <template
                     v-slot:body
-                >Skilled with Autodesk Fusion 360 to design, draft, and fabricate custom flight cases for virtually any application</template>
+                >Experienced with the Shopify platform, whether you just need a store setup with an existing theme, need custom features, or a fully custom theme</template>
                 <template v-slot:image>
                     <g-image
                         alt="Web Development"

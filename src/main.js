@@ -11,7 +11,8 @@ import {
 } from '@fortawesome/vue-fontawesome'
 import {
   config,
-  library
+  library,
+  dom
 } from '@fortawesome/fontawesome-svg-core'
 import {
   faTimesCircle
@@ -20,6 +21,8 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 
 config.autoAddCss = false;
 library.add(faTimesCircle)
+
+dom.watch()
 
 export default function (Vue, {
   router,
