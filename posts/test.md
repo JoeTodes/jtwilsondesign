@@ -1,7 +1,7 @@
 ---
-title: test
+title: jtwilson.design
 panel: web
-url: /
-image: /uploads/quark.jpg
+url: '/#'
+image: /uploads/jtwilsondesign.png
 ---
-cat of placeholding
+This landing page, built with Gridsome and NetlifyCMS
