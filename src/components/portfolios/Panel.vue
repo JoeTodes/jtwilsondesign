@@ -6,11 +6,12 @@
         >
             <div class="flex flex-row justify-between py-2 sm:py-8 px-4 sm:px-16">
                 <div
-                    class="text-white font-dispaly font-extrabold text-6xl align-middle"
+                    class="text-white font-display font-extrabold text-6xl align-middle"
                 >{{this.title}}</div>
-                <button class="self-end my-auto" v-on:click="$emit('close-portfolio',title)">
-                    <font-awesome class="text-white text-6xl" :icon="['far','times-circle']"></font-awesome>
-                </button>
+                <button
+                    class="self-end my-auto text-white font-display font-extrabold text-6xl align-middle"
+                    v-on:click="$emit('close-portfolio',title)"
+                >X</button>
             </div>
             <div class="flex mx-1 sm:mx-4 self-center justify-center mt-2">
                 <Card
