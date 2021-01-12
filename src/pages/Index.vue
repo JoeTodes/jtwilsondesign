@@ -43,7 +43,7 @@
                 >Skilled with Autodesk Fusion 360 to design, draft, and fabricate custom parts in a variety of media</template>
                 <template v-slot:image>
                     <g-image
-                        alt="Web Development"
+                        alt="CAD"
                         src="~/assets/roadcase.png"
                         class="lg:mr-8 w-3/4 sm:w-1/2"
                     />
@@ -57,7 +57,7 @@
                 >3D printable or laser engravable designs to enhance the gaming/hobby experience with custom tokens and box organizers</template>
                 <template v-slot:image>
                     <g-image
-                        alt="Web Development"
+                        alt="Gaming Accessories"
                         src="~/assets/tokens.png"
                         class="lg:ml-8 w-3/4 sm:w-1/2"
                     />
