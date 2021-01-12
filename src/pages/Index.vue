@@ -37,10 +37,10 @@
             <Content v-on:open-portfolio="openPortfolio" title="cad" :isLeft="false">
                 <template
                     v-slot:title
-                >E-Commerce Web Solutions with Shopify</template>
+                >Flexible &amp; Purposeful CAD Design &amp; Drafting Services</template>
                 <template
                     v-slot:body
-                >Experienced with the Shopify platform, whether you just need a store setup with an existing theme, need custom features, or a fully custom theme</template>
+                >Skilled with Autodesk Fusion 360 to design, draft, and fabricate custom parts in a variety of media</template>
                 <template v-slot:image>
                     <g-image
                         alt="Web Development"

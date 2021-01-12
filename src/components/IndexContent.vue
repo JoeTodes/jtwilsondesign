@@ -13,11 +13,12 @@
             <div class="text-black text-base sm:text-xl font-regular font-body mb-8">
                 <slot name="body"></slot>
             </div>
-
+<!--
             <button
                 v-on:click="$emit('open-portfolio', title )"
                 class="mb-4 font-display text-xl text-white font-bold frosty tracking-wider border-2 border-white rounded-full px-4 py-3 hover:text-text-green hover:border-text-green"
             >EXAMPLES</button>
+//-->
         </div>
         <slot name="image"></slot>
     </div>
