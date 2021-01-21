@@ -34,8 +34,10 @@ module.exports = {
       ]
     }
   },
-  plugins: [
-    {
+  templates: {
+    Product: 'storefront/products/:slug'
+  },
+  plugins: [{
       use: '@gridsome/source-filesystem',
       options: {
         path: 'posts/**/*.md',
@@ -52,6 +54,13 @@ module.exports = {
       options: {
         publicPath: `/admin`
       }
+    },
+    {
+      use: '~/src/sources/products',
+      options: {
+        apiKey: process.env.GRIDSOME_AIRTABLE_KEY,
+        base: process.env.GRIDSOME_AIRTABLE_BASE,
+      },
     },
   ]
 }

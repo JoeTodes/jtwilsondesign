@@ -6,36 +6,22 @@ import DefaultLayout from '~/layouts/Default.vue'
 import VueScrollTo from 'vue-scrollto'
 import VScrollLock from 'v-scroll-lock'
 
-import {
-  FontAwesomeIcon
-} from '@fortawesome/vue-fontawesome'
-import {
-  config,
-  library,
-  dom
-} from '@fortawesome/fontawesome-svg-core'
-import {
-  faTimesCircle
-} from '@fortawesome/free-regular-svg-icons'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-
-config.autoAddCss = false;
-library.add(faTimesCircle)
-
-dom.watch()
-
 export default function (Vue, {
   router,
   head,
   isClient
 }) {
   // Set default layout as a global component
-  Vue.component('Layout', DefaultLayout),
-    head.link.push({
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800|Nunito:300,400,600,700,800'
-    })
+  Vue.component('Layout', DefaultLayout)
   Vue.use(VueScrollTo)
   Vue.use(VScrollLock)
-  Vue.component('font-awesome', FontAwesomeIcon)
+  Vue.filter("formatMoney", function (number) {
+    const formatter = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "CAD",
+      minimumFractionDigits: 2,
+    });
+
+    return formatter.format(number);
+  });
 }
