@@ -35,7 +35,7 @@ module.exports = {
     }
   },
   templates: {
-    Product: 'storefront/products/:slug'
+    Product: '/storefront/products/:slug'
   },
   plugins: [{
       use: '@gridsome/source-filesystem',
