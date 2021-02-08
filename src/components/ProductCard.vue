@@ -1,41 +1,55 @@
 <template>
-    <g-link>
-        <div
-            class="border-gray-500 rounded shadow-lg flex-col flex text-center h-full"
-        >
-            <div class="h-1/3">
-                <g-image :src="this.imageUrl" />
-            </div>
-
-            <h3>{{ this.title }}</h3>
-            <p class="flex-grow">{{ this.description }}</p>
-            <div class="flex-row flex justify-between">
-                <p class="">{{ this.price | formatMoney }}</p>
-                <g-link
-                    class="snipcart-add-item"
-                    :data-item-id="this.id"
-                    :data-item-image="this.imageUrl"
-                    :data-item-description="this.description"
-                    :data-item-price="this.price"
-                    :data-item-name="this.title"
-                    :data-item-url="this.path"
-                >
-                    Add to cart
-                </g-link>
-            </div>
-        </div>
-    </g-link>
+  <SfProductCardHorizontal
+    :title="title"
+    :description="description"
+    :link="path"
+    :regularPrice="price | formatMoney"
+    :showAddToCartButton="true"
+    :wishlistIcon="false"
+    :qty="qty"
+    v-on:input="updateQuantity"
+    v-on:click:add-to-cart="addToCart"
+    ><template v-slot:image
+      ><g-link :to="path">
+        <g-image :src="imageUrl" />
+      </g-link> </template
+  ></SfProductCardHorizontal>
 </template>
 
 <script>
+import { SfProductCardHorizontal } from "@storefront-ui/vue";
 export default {
-    props: {
-        id: String,
-        imageUrl: String,
-        description: String,
-        title: String,
-        price: Number,
-        path: String,
+  data: function() {
+    return { qty: 1 };
+  },
+  props: {
+    id: String,
+    imageUrl: String,
+    description: String,
+    title: String,
+    price: Number,
+    path: String,
+  },
+  components: {
+    SfProductCardHorizontal,
+  },
+  methods: {
+    updateQuantity: function(payload) {
+      this.qty = payload;
     },
+    addToCart: async function() {
+      try {
+        await Snipcart.api.cart.items.add({
+          id: this.id,
+          name: this.title,
+          price: this.price,
+          url: this.path,
+          quantity: this.qty,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
 };
 </script>

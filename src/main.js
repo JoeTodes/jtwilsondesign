@@ -5,6 +5,7 @@ require('~/main.css')
 import DefaultLayout from '~/layouts/Default.vue'
 import VueScrollTo from 'vue-scrollto'
 import VScrollLock from 'v-scroll-lock'
+import "@storefront-ui/vue/styles.scss";
 
 export default function (Vue, {
   router,

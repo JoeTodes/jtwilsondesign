@@ -16,6 +16,8 @@ if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
 module.exports = {
   siteName: 'JTWilsonDesign',
   siteDescription: 'freelance portfolio for Joe Wilson',
+  siteUrl: 'https://jtwilson.design',
+  titleTemplate: '%s | JTWilson.Design',
   plugins: [],
   css: {
     loaderOptions: {

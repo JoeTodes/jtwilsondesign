@@ -46,7 +46,7 @@ query ($id: ID!){
 </page-query>
 
 <script>
-import Layout from "~/layouts/Store.vue";
+import Layout from "~/layouts/StoreLayout.vue";
 
 export default {
     components: {
