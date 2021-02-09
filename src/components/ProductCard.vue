@@ -8,6 +8,7 @@
         :wishlistIcon="false"
         :qty="qty"
         v-on:input="updateQuantity"
+        v-on:click:add-to-cart="addToCart"
         ><template v-slot:image
             ><g-link :to="path">
                 <g-image :src="imageUrl" />
