@@ -1,14 +1,16 @@
 <template>
     <div class="bg-gray-200 h-screen">
         <div>
-            <g-link class="snipcart-customer-signin">Account</g-link>
-            <g-link class="snipcart-checkout">
-                Cart
-                <span class="snipcart-total-items"></span>
-                <span class="snipcart-total-price">{{
-                    this.totalPrice | formatMoney
-                }}</span>
-            </g-link>
+            <ClientOnly>
+                <g-link class="snipcart-customer-signin">Account</g-link>
+                <g-link class="snipcart-checkout">
+                    Cart
+                    <span class="snipcart-total-items"></span>
+                    <span class="snipcart-total-price">{{
+                        this.totalPrice | formatMoney
+                    }}</span>
+                </g-link>
+            </ClientOnly>
         </div>
         <div class="px-12">
             <slot />
