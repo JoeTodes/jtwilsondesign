@@ -13,6 +13,7 @@ module.exports = {
       colors: {
         'text-green': '#17DDD0',
         'text-blue': '#2F8DF7',
+        'store-green': '#5ece7b',
         'ice': {
           100: '#E6F7FF',
           200: '#BFEBFF',
