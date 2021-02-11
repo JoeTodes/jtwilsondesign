@@ -24,6 +24,7 @@
     "tailwindcss-gradients": "^3.0.0",
     "v-scroll-lock": "^1.1.0",
     "vue": "~2",
+    "vue-loader": "^15.9.6",
     "vue-scrollto": "^2.17.1"
   },
   "devDependencies": {
