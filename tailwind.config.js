@@ -45,6 +45,6 @@ module.exports = {
     margin: ['hover']
   },
   plugins: [
-    require('tailwindcss-plugins/gradients'),
+    require('tailwindcss-gradients'),
   ]
 }

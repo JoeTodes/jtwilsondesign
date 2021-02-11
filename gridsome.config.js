@@ -4,14 +4,6 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const tailwind = require('tailwindcss')
-const purgecss = require('@fullhuman/postcss-purgecss')
-
-const postcssPlugins = [
-  tailwind()
-]
-
-if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
 
 module.exports = {
   siteName: 'JTWilsonDesign',
@@ -19,13 +11,6 @@ module.exports = {
   siteUrl: 'https://jtwilson.design',
   titleTemplate: '%s | JTWilson.Design',
   plugins: [],
-  css: {
-    loaderOptions: {
-      postcss: {
-        plugins: postcssPlugins,
-      },
-    },
-  },
   transformers: {
     remark: {
       externalLinksTarget: '_blank',
@@ -37,9 +22,20 @@ module.exports = {
     }
   },
   templates: {
-    Product: '/storefront/products/:slug'
+    Product: '/store/products/:slug'
   },
   plugins: [{
+      use: "gridsome-plugin-tailwindcss",
+
+      options: {
+        tailwindConfig: './tailwind.config.js',
+        presetEnvConfig: {},
+        shouldImport: false,
+        shouldTimeTravel: false
+      }
+
+    },
+    {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'posts/**/*.md',
