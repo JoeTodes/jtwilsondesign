@@ -10,6 +10,7 @@
       :path="edge.node.path"
       :price="edge.node.content.Price"
       :title="edge.node.title"
+      :weight="edge.node.content.Weight"
     >
     </product-card>
   </div>
@@ -33,6 +34,7 @@
                     }
                     Description
                     Price
+                    Weight
                 }
 
             }
