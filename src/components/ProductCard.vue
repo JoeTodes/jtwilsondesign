@@ -30,6 +30,9 @@ export default {
     price: Number,
     path: String,
     weight: Number,
+    length: Number,
+    width: Number,
+    height: Number,
   },
   components: {
     SfProductCardHorizontal,
@@ -47,6 +50,9 @@ export default {
           url: this.path,
           quantity: this.qty,
           weight: this.weight,
+          length: this.length,
+          width: this.width,
+          height: this.height,
         });
       } catch (error) {
         console.log(error);

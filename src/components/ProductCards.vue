@@ -11,6 +11,9 @@
       :price="edge.node.content.Price"
       :title="edge.node.title"
       :weight="edge.node.content.Weight"
+      :length="edge.node.content.Length"
+      :width="edge.node.content.Width"
+      :height="edge.node.content.Height"
     >
     </product-card>
   </div>
@@ -35,6 +38,9 @@
                     Description
                     Price
                     Weight
+                    Length
+                    Width
+                    Height
                 }
 
             }
