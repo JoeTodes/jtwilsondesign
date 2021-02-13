@@ -1,64 +1,63 @@
-// This is where project configuration and plugin options are located. 
+// This is where project configuration and plugin options are located.
 // Learn more: https://gridsome.org/docs/config
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-
 module.exports = {
-  siteName: 'JTWilsonDesign',
-  siteDescription: 'freelance portfolio for Joe Wilson',
-  siteUrl: 'https://jtwilson.design',
-  titleTemplate: '%s | JTWilson.Design',
+  siteName: "JTWilsonDesign",
+  siteDescription: "Portfolio and 3D Printed Spare Parts Web Store",
+  siteUrl: "https://jtwilson.design",
+  titleTemplate: "%s | JTWilson.Design",
   plugins: [],
   transformers: {
     remark: {
-      externalLinksTarget: '_blank',
-      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-      anchorClassName: 'icon icon-link',
+      externalLinksTarget: "_blank",
+      externalLinksRel: ["nofollow", "noopener", "noreferrer"],
+      anchorClassName: "icon icon-link",
       plugins: [
         // ...global plugins
-      ]
-    }
+      ],
+    },
   },
   templates: {
-    Product: '/store/products/:slug'
+    Product: "/store/products/:slug",
   },
-  plugins: [{
+  plugins: [
+    {
       use: "gridsome-plugin-tailwindcss",
 
       options: {
-        tailwindConfig: './tailwind.config.js',
+        tailwindConfig: "./tailwind.config.js",
         presetEnvConfig: {},
         shouldImport: false,
-        shouldTimeTravel: false
-      }
-
+        shouldTimeTravel: false,
+      },
     },
     {
-      use: '@gridsome/source-filesystem',
+      use: "@gridsome/source-filesystem",
       options: {
-        path: 'posts/**/*.md',
-        typeName: 'Post',
+        path: "posts/**/*.md",
+        typeName: "Post",
         remark: {
           plugins: [
             // ...local plugins
-          ]
-        }
-      }
+          ],
+        },
+      },
     },
     {
       use: `gridsome-plugin-netlify-cms`,
       options: {
-        publicPath: `/admin`
-      }
+        publicPath: `/admin`,
+      },
     },
     {
-      use: '~/src/sources/products',
+      use: "~/src/sources/products",
       options: {
         apiKey: process.env.GRIDSOME_AIRTABLE_KEY,
         base: process.env.GRIDSOME_AIRTABLE_BASE,
       },
     },
-  ]
-}
+  ],
+};
