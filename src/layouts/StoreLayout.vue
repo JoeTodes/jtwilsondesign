@@ -4,15 +4,18 @@
       <h1
         class="align-middle font-body font-extrabold text-store-green text-xl lg:text-3xl hover:text-ice-600 tracking-wider"
       >
-        JTWILSON.DESIGN<span class="text-text-blue align-middle">[store]</span>
+        JTWILSON.DESIGN<span class="text-text-blue">[store]</span>
       </h1>
       <div>
         <g-link class="align-middle inline-block snipcart-customer-signin mx-1"
           ><SfIcon icon="profile" size="lg" color="green-primary"
         /></g-link>
-        <g-link class="align-middle inline-block snipcart-checkout mx-1">
+        <g-link class="align-middle inline-block snipcart-checkout ml-1">
           <SfIcon icon="empty_cart" size="lg" color="green-primary" />
         </g-link>
+        <span
+          class="align-middle text-store-green font-body font-bold snipcart-items-count"
+        ></span>
       </div>
     </div>
     <div class="px-12">
