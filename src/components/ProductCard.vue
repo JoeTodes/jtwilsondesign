@@ -49,10 +49,12 @@ export default {
           price: this.price,
           url: this.path,
           quantity: this.qty,
-          weight: this.weight,
-          length: this.length,
-          width: this.width,
-          height: this.height,
+          dimensions: {
+            weight: this.weight,
+            length: this.length,
+            width: this.width,
+            height: this.height,
+          },
         });
       } catch (error) {
         console.log(error);
